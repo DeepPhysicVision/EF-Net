@@ -25,9 +25,9 @@ if __name__ == '__main__':
         img = image.img_to_array(img)
         img = img.astype('float32')
         img = img/255
-        img = np.expand_dims(img, axis=0)  # 增加第一个batch维度
+        img = np.expand_dims(img, axis=0)  
         train_image.append(img)
-    train_image = np.concatenate([x for x in train_image])  # 把所有图片数组concatenate在一起，便于批量处理
+    train_image = np.concatenate([x for x in train_image])  
 
     # test input=图片
     test_images = glob.glob(test_image_paths + '*.jpg')
@@ -37,9 +37,9 @@ if __name__ == '__main__':
         img = image.img_to_array(img)
         img = img.astype('float32')
         img = img/255
-        img = np.expand_dims(img, axis=0)  # 增加第一个batch维度
+        img = np.expand_dims(img, axis=0)  
         test_image.append(img)
-    test_image = np.concatenate([x for x in test_image])  # 把所有图片数组concatenate在一起，便于批量处理
+    test_image = np.concatenate([x for x in test_image])  
 
     # val input=图片
     val_images = glob.glob(val_image_paths + '*.jpg')
@@ -49,9 +49,9 @@ if __name__ == '__main__':
         img = image.img_to_array(img)
         img = img.astype('float32')
         img = img / 255
-        img = np.expand_dims(img, axis=0)  # 增加第一个batch维度
+        img = np.expand_dims(img, axis=0) 
         val_image.append(img)
-    val_image = np.concatenate([x for x in val_image])  # 把所有图片数组concatenate在一起，便于批量处理
+    val_image = np.concatenate([x for x in val_image])  
 
     # train/test/val input=句子+位置, out=标签
     train_aspect_labels, train_aspect_text_inputs, train_sentence_inputs, _ = file_reader.load_inputs_and_label(name='train')

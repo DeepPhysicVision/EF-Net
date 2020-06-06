@@ -67,9 +67,8 @@ class FileReader:
 
         return np.asarray(aspect_labels), aspect_text_inputs, sentence_inputs, true_labels
 
-#重要  对每个句子和其中的目标词的相对位置进行区分
     def get_position_input(self, sentences=[], aspects=[]):
-        positions = [] #位置开始计数统计
+        positions = [] 
         count = 0
 
         max_length = 0
@@ -179,7 +178,6 @@ class FileReader:
     #
     #     return np.array(position_inputs, dtype='float32')
 
-#重要   目标词向量
     def get_aspect_pooling(self, aspects_index=np.array([0]),
                            aspect_index={}, aspect_embeddings=[],
                            embedding_matrix=np.array([0])):

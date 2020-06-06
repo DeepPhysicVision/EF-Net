@@ -141,7 +141,7 @@ class TextToInput(object):
     @staticmethod
     def convert_input_to_index(train_inputs=[], test_inputs=[], val_inputs=[],max_sen_length=40):
         print("start convert text to index.")
-        tk = Tokenizer(num_words=20000, filters="", split=" ") #当词数多时，上限要改
+        tk = Tokenizer(num_words=20000, filters="", split=" ")
         tk.fit_on_texts(train_inputs)
         tk.fit_on_texts(test_inputs)
         tk.fit_on_texts(val_inputs)
