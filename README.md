@@ -12,3 +12,6 @@
   * EmbeddingWriter
   * Training
 
+# Disclaimer:
+
+* Reference papers or codes: May be maintain and be kept in sync.
