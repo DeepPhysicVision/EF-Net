@@ -30,15 +30,14 @@ class EmbeddingWriter(object):
                 pass
         rf.close()
 
-    #######重要（glove 词向量训练  仅是预料库中的文件与数据无关）
-    def convert_embedding_file(self, word_num=20000, word_index={}):   #word index表示句子的索引列表 10000表示一次读取数量的批次
-        embedding_file = 'Data/glove.42B.300d.txt'  #指定文件位置
-        rf = open(embedding_file, 'r', encoding='utf-8')  #读取预训练词向量
-        embeddings_index = {}   #构建glove列表
+    def convert_embedding_file(self, word_num=20000, word_index={}):  
+        embedding_file = 'Data/glove.42B.300d.txt'  
+        rf = open(embedding_file, 'r', encoding='utf-8')  
+        embeddings_index = {}   
         print("reading embedding from " + embedding_file)
-        count = 0  #从0开始计数
+        count = 0  
         for line in rf:
-            count += 1  #累加
+            count += 1  
             if count % 100000 == 0:
                 print(str(count))
             values = line.split()
@@ -55,7 +54,7 @@ class EmbeddingWriter(object):
             embeddings_index[word] = coefs
         rf.close()
         print("finish.")
-#开始对本项目数据处理成词向量
+
         num_words = min(word_num, len(word_index))
         embedding_matrix = np.zeros((num_words + 1, self.EMBEDDING_DIM))
 
@@ -64,7 +63,7 @@ class EmbeddingWriter(object):
                 continue
             embedding_vector = embeddings_index.get(word)
             if embedding_vector is not None:
-                # words not found in embedding index will be all-zeros.对于没有存在的词全记为0
+                # words not found in embedding index will be all-zeros.
                 embedding_matrix[i] = embedding_vector
             else:
                 print(word)
