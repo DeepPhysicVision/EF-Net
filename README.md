@@ -1,7 +1,7 @@
 # EF-Net (Multimodal Aspect Based Sentiment Analysis)
-* A Keras implementation for the Multimodal task of the IJCAI2019 paper "Adapting BERT for Target-Oriented Multimodal Sentiment Classification".
+* A Keras implementation for the Multimodal task of the IJCAI2019 "Adapting BERT for Target-Oriented Multimodal Sentiment Classification".
 * Our proposed model: Attention capsule extraction and multichannel fusion network (EF-Net)
-* State: Unpublished
+* State: Targeted aspect based multimodal sentiment analysis:an attention capsule extraction and multi-head fusion network https://arxiv.org/abs/2103.07659
 
 ## Ready to run process:
   * TsvToTxt  
